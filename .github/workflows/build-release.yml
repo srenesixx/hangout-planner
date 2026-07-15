@@ -27,12 +27,12 @@ jobs:
     - name: Install Dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install -r requirements.txt
-        pip install pyinstaller
+        python -m pip install -r requirements.txt
+        python -m pip install pyinstaller
 
     - name: Build Executable with PyInstaller
       run: |
-        pyinstaller HangoutPlanner.spec
+        python -m PyInstaller HangoutPlanner.spec
 
     - name: Create Release and Upload Asset
       uses: softprops/action-gh-release@v2
