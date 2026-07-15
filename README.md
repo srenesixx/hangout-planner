@@ -6,6 +6,19 @@ Aplikasi ini mengintegrasikan estimasi pengeluaran di berbagai lokasi, pembagian
 
 ---
 
+## 📥 Download Aplikasi (Siap Pakai - Windows Only)
+
+Bagi pengguna umum yang ingin langsung menggunakan aplikasi **tanpa harus menginstal Python atau mengunduh source code**, silakan unduh aplikasi melalui tautan di bawah ini:
+
+### 🚀 [**Download HangoutPlanner.exe (Rilis Terbaru)**](https://github.com/srenesixx/hangout-planner/releases/latest)
+
+> 💡 **Cara Menjalankan:** 
+> 1. Unduh file **`HangoutPlanner.exe`** dari tautan di atas (pada bagian *Assets*).
+> 2. Pindahkan file tersebut ke **Desktop** Anda atau folder mana saja sesuai keinginan Anda.
+> 3. Klik dua kali file `.exe` untuk membukanya. Database lokal (`hangout_planner.db`) akan otomatis dibuat di folder tempat file `.exe` diletakkan untuk menyimpan seluruh data Anda secara aman.
+
+---
+
 ## ✨ Fitur Utama
 
 1. **Autentikasi Multi-User (Login & Register)**:
@@ -44,14 +57,12 @@ Aplikasi ini dapat dijalankan dengan dua metode:
 Pilih salah satu metode berikut untuk menjalankan aplikasi:
 
 ### Metode 1: Menggunakan Standalone Executable (Rekomendasi Cepat - Windows Only)
-Metode ini adalah cara tercepat karena tidak memerlukan Python atau instalasi library tambahan. Anda dapat menjalankannya dengan dua opsi:
+Metode ini adalah cara tercepat karena tidak memerlukan Python atau instalasi library tambahan.
 
-* **Opsi A (Menjalankan di dalam folder `dist/`):**
-  1. Masuk ke direktori `dist/`.
-  2. Jalankan file **`HangoutPlanner.exe`** dengan cara klik dua kali (double click).
-
-* **Opsi B (Portabel / Pindahkan ke mana saja):**
-  Karena file executable dibuat dengan mode *single-file* (`onefile`), file **`HangoutPlanner.exe`** di dalam folder `dist/` bersifat sepenuhnya portabel. Anda dapat menyalin (copy) atau memindahkan file tersebut ke **Desktop** Anda atau folder mana pun secara bebas, lalu klik dua kali untuk membukanya. Database lokal (`hangout_planner.db`) akan otomatis dibuat di folder tempat file `.exe` tersebut diletakkan.
+1. Buka halaman rilis resmi di [GitHub Releases](https://github.com/srenesixx/hangout-planner/releases/latest).
+2. Unduh file **`HangoutPlanner.exe`** dari daftar aset rilis terbaru.
+3. Simpan file tersebut di mana saja (misalnya Desktop Anda) dan klik dua kali untuk membukanya.
+4. Aplikasi akan mendeteksi/membuat file database lokal `hangout_planner.db` secara otomatis di folder yang sama untuk menyimpan data Anda.
 
 ---
 
