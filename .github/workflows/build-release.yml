@@ -32,7 +32,7 @@ jobs:
 
     - name: Build Executable with PyInstaller
       run: |
-        python -m PyInstaller HangoutPlanner.spec
+        pyinstaller --onefile --windowed --name HangoutPlanner main.py
 
     - name: Create Release and Upload Asset
       uses: softprops/action-gh-release@v2
