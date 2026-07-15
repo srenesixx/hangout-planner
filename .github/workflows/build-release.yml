@@ -6,6 +6,9 @@ on:
       - 'v*' # Memicu alur kerja ketika Anda melakukan push tag versi baru (misalnya v1.0.0)
   workflow_dispatch: # Memungkinkan Anda menjalankan build secara manual dari tab Actions di GitHub
 
+permissions:
+  contents: write
+
 jobs:
   build:
     name: Build Windows Executable
