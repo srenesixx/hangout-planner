@@ -108,15 +108,15 @@ Aplikasi Hangout Planner akan terbuka dalam jendela desktop baru.
 ---
 
 ### 📦 Cara Melakukan Build / Kompilasi Ulang ke Executable (.exe)
-Jika Anda melakukan perubahan pada kode sumber dan ingin membuat file `.exe` baru:
+Jika Anda melakukan perubahan pada kode sumber dan ingin membuat file `.exe` baru secara lokal:
 
 1. Pastikan library `pyinstaller` sudah terinstal di dalam virtual environment Anda:
    ```bash
    pip install pyinstaller
    ```
-2. Jalankan perintah build menggunakan file spesifikasi `.spec` yang sudah disediakan:
+2. Jalankan perintah build langsung dari script utama `main.py`:
    ```bash
-   pyinstaller HangoutPlanner.spec
+   pyinstaller --onefile --windowed --name HangoutPlanner main.py
    ```
 3. File executable baru yang telah diperbarui akan dihasilkan kembali di dalam folder `dist/`.
 
