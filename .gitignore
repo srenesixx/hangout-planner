@@ -25,14 +25,6 @@ share/python-wheels/
 .installed.cfg
 *.egg
 MANIFEST
-*.spec
-
-# PyInstaller
-#  Usually these files are written by a python script, you may want to ignore them
-#  Our spec file can be committed if we want to share build configs, but usually builds are ignored
-#  Since HangoutPlanner.spec is present in the workspace, we will allow it or ignore build/ and dist/
-#  Leaving .spec out of ignore if we want to track it, but adding build/ and dist/ to ignore.
-
 # Installer logs
 pip-log.txt
 pip-delete-this-directory.txt

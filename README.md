@@ -33,53 +33,81 @@ Aplikasi ini mengintegrasikan estimasi pengeluaran di berbagai lokasi, pembagian
 
 ## 🛠️ Persyaratan Sistem
 
-Sebelum menjalankan aplikasi, pastikan sistem Anda sudah terinstal:
-- **Python** versi 3.10 atau yang lebih baru.
-- Library pendukung (Dependencies) yang terdaftar di `requirements.txt`.
+Aplikasi ini dapat dijalankan dengan dua metode:
+1. **Metode Executable (`.exe`)**: Langsung dijalankan di Windows tanpa perlu menginstal Python atau library lainnya.
+2. **Metode Source Code (Python)**: Memerlukan instalasi **Python** versi 3.10 atau yang lebih baru beserta pustaka pendukung di `requirements.txt`.
 
 ---
 
 ## 🚀 Cara Menjalankan Aplikasi
 
-Ikuti langkah-langkah di bawah ini untuk menjalankan aplikasi di komputer lokal Anda:
+Pilih salah satu metode berikut untuk menjalankan aplikasi:
 
-### 1. Kloning atau Unduh Repositori
+### Metode 1: Menggunakan Standalone Executable (Rekomendasi Cepat - Windows Only)
+Metode ini adalah cara tercepat karena tidak memerlukan Python atau instalasi library tambahan. Anda dapat menjalankannya dengan dua opsi:
+
+* **Opsi A (Menjalankan di dalam folder `dist/`):**
+  1. Masuk ke direktori `dist/`.
+  2. Jalankan file **`HangoutPlanner.exe`** dengan cara klik dua kali (double click).
+
+* **Opsi B (Portabel / Pindahkan ke mana saja):**
+  Karena file executable dibuat dengan mode *single-file* (`onefile`), file **`HangoutPlanner.exe`** di dalam folder `dist/` bersifat sepenuhnya portabel. Anda dapat menyalin (copy) atau memindahkan file tersebut ke **Desktop** Anda atau folder mana pun secara bebas, lalu klik dua kali untuk membukanya. Database lokal (`hangout_planner.db`) akan otomatis dibuat di folder tempat file `.exe` tersebut diletakkan.
+
+---
+
+### Metode 2: Menjalankan dari Source Code (Multiplatform / Development)
+Gunakan metode ini jika Anda ingin memodifikasi kode atau menjalankan aplikasi di luar sistem operasi Windows.
+
+#### 1. Persiapan Direktori
 Pastikan Anda berada di direktori utama proyek `hangout-planner`.
 
-### 2. Buat & Aktifkan Virtual Environment (Opsional tetapi Sangat Disarankan)
+#### 2. Buat & Aktifkan Virtual Environment (Sangat Disarankan)
 Untuk menghindari konflik dengan library Python global di sistem Anda, buat virtual environment baru:
 
-**Di Windows (PowerShell):**
-```powershell
-python -m venv .venv
-.venv\Scripts\Activate.ps1
-```
+* **Di Windows (PowerShell):**
+  ```powershell
+  python -m venv .venv
+  .venv\Scripts\Activate.ps1
+  ```
+* **Di Windows (CMD):**
+  ```cmd
+  python -m venv .venv
+  .venv\Scripts\activate.bat
+  ```
+* **Di macOS/Linux:**
+  ```bash
+  python3 -m venv .venv
+  source .venv/bin/activate
+  ```
 
-**Di Windows (CMD):**
-```cmd
-python -m venv .venv
-.venv\Scripts\activate.bat
-```
-
-**Di macOS/Linux:**
-```bash
-python3 -m venv .venv
-source .venv/bin/activate
-```
-
-### 3. Instal Dependensi
+#### 3. Instal Dependensi
 Instal semua library yang dibutuhkan menggunakan `pip`:
 ```bash
 pip install -r requirements.txt
 ```
 
-### 4. Jalankan Aplikasi
+#### 4. Jalankan Aplikasi
 Jalankan file utama `main.py` menggunakan Python:
 ```bash
 python main.py
 ```
 
 Aplikasi Hangout Planner akan terbuka dalam jendela desktop baru.
+
+---
+
+### 📦 Cara Melakukan Build / Kompilasi Ulang ke Executable (.exe)
+Jika Anda melakukan perubahan pada kode sumber dan ingin membuat file `.exe` baru:
+
+1. Pastikan library `pyinstaller` sudah terinstal di dalam virtual environment Anda:
+   ```bash
+   pip install pyinstaller
+   ```
+2. Jalankan perintah build menggunakan file spesifikasi `.spec` yang sudah disediakan:
+   ```bash
+   pyinstaller HangoutPlanner.spec
+   ```
+3. File executable baru yang telah diperbarui akan dihasilkan kembali di dalam folder `dist/`.
 
 ---
 
