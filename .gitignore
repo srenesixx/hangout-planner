@@ -1,0 +1,71 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+bin/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+*.spec
+
+# PyInstaller
+#  Usually these files are written by a python script, you may want to ignore them
+#  Our spec file can be committed if we want to share build configs, but usually builds are ignored
+#  Since HangoutPlanner.spec is present in the workspace, we will allow it or ignore build/ and dist/
+#  Leaving .spec out of ignore if we want to track it, but adding build/ and dist/ to ignore.
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nosenv/
+.nohist/
+pip-wheel-metadata/
+.gallery_cache/
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# IDEs and editors
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Local database
+*.db
+*.sqlite3
+
+# Operating System Files
+DS_Store
+.DS_Store
+Thumbs.db
+db.sqlite3
