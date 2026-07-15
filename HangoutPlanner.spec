@@ -1,11 +1,14 @@
 # -*- mode: python ; coding: utf-8 -*-
+import os
+import customtkinter
 
+customtkinter_path = os.path.dirname(customtkinter.__file__)
 
 a = Analysis(
     ['main.py'],
     pathex=[],
     binaries=[],
-    datas=[('.venv\\Lib\\site-packages\\customtkinter', 'customtkinter')],
+    datas=[(customtkinter_path, 'customtkinter')],
     hiddenimports=[],
     hookspath=[],
     hooksconfig={},
