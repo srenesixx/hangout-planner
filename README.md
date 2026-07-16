@@ -124,13 +124,31 @@ Jika Anda melakukan perubahan pada kode sumber dan ingin membuat file `.exe` bar
 
 ## 📂 Struktur Folder Proyek
 
+Proyek ini telah direfaktor menggunakan arsitektur **Model-View-Controller (MVC)** untuk meningkatkan modularitas, keterbacaan, dan pemeliharaan kode:
+
 - `main.py`: Entrypoint utama aplikasi.
-- `src/`: Direktori kode sumber utama.
-- `src/database.py`: Inisialisasi dan konfigurasi database SQLite (`hangout_planner.db`).
-- `src/auth.py`: Logika registrasi, login, dan autentikasi user.
-- `src/components.py`: Kumpulan widget CustomTkinter khusus dan skema warna/desain.
-- `src/views/`: Layout dan halaman-halaman antarmuka aplikasi (Dashboard, Login, Create Plan, History, Profile, Split Bill, dll).
 - `requirements.txt`: Daftar library eksternal yang dibutuhkan.
+- `src/`: Direktori kode sumber utama.
+  - `config.py`: Konfigurasi global aplikasi seperti judul aplikasi, ukuran jendela, dan lokasi database.
+  - `models/`: Berisi logika data, interaksi database SQLite (`hangout_planner.db`), dan aturan bisnis.
+    - `__init__.py`: Inisialisasi package models.
+    - `database.py`: Inisialisasi skema database dan koneksi sqlite.
+    - `auth.py`: Logika autentikasi user, password hashing, dan manajemen saldo.
+    - `planner.py`: Logika rencana hangout, split bill, perhitungan score kesehatan anggaran, dan statistik.
+  - `controllers/`: Bertindak sebagai perantara (bridge) untuk mengontrol aliran data antara model dan view.
+    - `__init__.py`: Inisialisasi package controllers.
+    - `auth_controller.py`: Menjembatani fungsi autentikasi user dan saldo ke tampilan antarmuka.
+    - `planner_controller.py`: Menjembatani pengelolaan rencana, item estimasi, split bill, dan kalkulasi statistik ke tampilan antarmuka.
+  - `views/`: Menangani visualisasi antarmuka pengguna (GUI) berbasis CustomTkinter.
+    - `__init__.py`: Exporter seluruh view frames.
+    - `components.py`: Kumpulan widget kustom (seperti `CardFrame`, `PrimaryButton`, `CustomEntry`, `CustomLabel`) dan skema warna/desain global.
+    - `login.py`: Jendela masuk dan registrasi user.
+    - `dashboard.py`: Jendela ringkasan, grafik Matplotlib, dan status keuangan terkini.
+    - `create_plan.py`: Jendela formulir pembuatan rencana hangout baru.
+    - `plan_detail.py`: Jendela kelola item pengeluaran, simulasi budget pintar, proyeksi mood, dan detail rencana.
+    - `history.py`: Jendela riwayat rencana beserta perubahan status rencana.
+    - `split_bill.py`: Jendela kelola pembagian tagihan dan status pelunasan teman.
+    - `profile.py`: Jendela ubah saldo (top up) dan perubahan password.
 
 ---
 

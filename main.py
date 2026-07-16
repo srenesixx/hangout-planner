@@ -8,15 +8,15 @@ import customtkinter as ctk
 import tkinter as tk
 from tkinter import messagebox
 
-from src.database import init_db
-from src.components import COLORS, FONTS, format_rupiah, CustomLabel, MutedLabel, PrimaryButton, SecondaryButton, DangerButton
+from src.models.database import init_db
+from src.views.components import COLORS, FONTS, format_rupiah, CustomLabel, MutedLabel, PrimaryButton, SecondaryButton, DangerButton
 from src.views import (
     LoginRegisterFrame, DashboardFrame, CreatePlanFrame, 
     PlanDetailContainerFrame, BudgetHealthScoreView, HistoryFrame, ProfileFrame,
     SplitBillDashboardFrame
 )
 from src.config import APP_TITLE, WINDOW_SIZE, MIN_WINDOW_SIZE
-import src.auth as auth
+from src.controllers.auth_controller import AuthController as auth
 
 class HangoutPlannerApp(ctk.CTk):
     """Main application manager for Hangout Planner Desktop App."""

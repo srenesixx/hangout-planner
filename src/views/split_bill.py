@@ -2,11 +2,11 @@ import tkinter as tk
 import customtkinter as ctk
 from datetime import datetime
 from tkinter import messagebox
-from src.components import (
+from src.views.components import (
     COLORS, FONTS, format_rupiah, CardFrame, 
     PrimaryButton, SecondaryButton, SuccessButton, CustomLabel, HeaderLabel, MutedLabel, SubtitleLabel
 )
-import src.planner as planner
+from src.controllers.planner_controller import PlannerController as planner
 
 class SplitBillDashboardFrame(ctk.CTkFrame):
     """View displaying global split bill management (F5/sidebar)."""

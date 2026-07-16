@@ -6,13 +6,13 @@ matplotlib.use("TkAgg")
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 import matplotlib.pyplot as plt
 
-from src.components import (
+from src.views.components import (
     COLORS, FONTS, format_rupiah,
     CardFrame, PrimaryButton, SecondaryButton,
     CustomLabel, SubtitleLabel, MutedLabel
 )
-import src.auth as auth
-import src.planner as planner
+from src.controllers.auth_controller import AuthController as auth
+from src.controllers.planner_controller import PlannerController as planner
 
 class DashboardFrame(ctk.CTkFrame):
     """Dashboard view listing summary, quick actions, and integrated stats."""
@@ -45,7 +45,7 @@ class DashboardFrame(ctk.CTkFrame):
         header_frame = ctk.CTkFrame(self, fg_color="transparent")
         header_frame.grid(row=0, column=0, columnspan=2, padx=30, pady=(25, 15), sticky="ew")
         
-        from src.components import HeaderLabel # Local import to avoid circular dependencies if any
+        from src.views.components import HeaderLabel # Local import to avoid circular dependencies if any
         HeaderLabel(header_frame, text=f"Halo, {self.user['nama']}! 👋").pack(side="left")
         
         # Quick Action Button

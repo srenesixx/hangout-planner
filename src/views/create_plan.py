@@ -2,12 +2,12 @@ from datetime import datetime
 import customtkinter as ctk
 from tkinter import messagebox
 
-from src.components import (
+from src.views.components import (
     COLORS, FONTS,
     CardFrame, SecondaryButton, SuccessButton,
     CustomEntry, CustomLabel, HeaderLabel, MutedLabel
 )
-import src.planner as planner
+from src.controllers.planner_controller import PlannerController as planner
 
 class CreatePlanFrame(ctk.CTkFrame):
     """View to design a new hangout plan."""

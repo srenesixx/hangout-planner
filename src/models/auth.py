@@ -1,7 +1,7 @@
 import hashlib
 import os
 import sqlite3
-from src.database import get_connection
+from src.models.database import get_connection
 
 def hash_password(password: str) -> str:
     """Hashes a password using SHA256 with a unique salt."""

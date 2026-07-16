@@ -2,12 +2,12 @@ from datetime import datetime
 import customtkinter as ctk
 from tkinter import messagebox
 
-from src.components import (
+from src.views.components import (
     COLORS, FONTS, format_rupiah,
     CardFrame, PrimaryButton, SecondaryButton, SuccessButton, DangerButton,
     CustomLabel, HeaderLabel, MutedLabel
 )
-import src.planner as planner
+from src.controllers.planner_controller import PlannerController as planner
 
 class HistoryFrame(ctk.CTkFrame):
     """View displaying historical hangout plans (F10)."""

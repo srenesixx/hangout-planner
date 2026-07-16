@@ -1,7 +1,18 @@
 import sqlite3
 import json
 from datetime import datetime
-from src.database import get_connection
+from src.models.database import get_connection
+
+def get_user_plan_periods(user_id: int) -> list[str]:
+    """Retrieves all unique months (YYYY-MM) from user's plans."""
+    conn = get_connection()
+    cursor = conn.cursor()
+    try:
+        cursor.execute("SELECT DISTINCT strftime('%Y-%m', tanggal) as mon FROM plans WHERE user_id = ? ORDER BY mon DESC", (user_id,))
+        return [r['mon'] for r in cursor.fetchall()]
+    finally:
+        conn.close()
+
 
 def calculate_plan_total(plan_id: int) -> int:
     """Calculates the total estimated cost for a plan, including locations, items, and transport cost."""

@@ -2,12 +2,12 @@ import customtkinter as ctk
 import tkinter as tk
 from tkinter import messagebox
 
-from src.components import (
+from src.views.components import (
     COLORS, FONTS, format_rupiah,
     CardFrame, PrimaryButton, SecondaryButton, DangerButton, SuccessButton,
     CustomEntry, CustomLabel, HeaderLabel, MutedLabel, SubtitleLabel
 )
-import src.auth as auth
+from src.controllers.auth_controller import AuthController as auth
 
 class ProfileFrame(ctk.CTkFrame):
     """Profile & settings options page (F10)."""

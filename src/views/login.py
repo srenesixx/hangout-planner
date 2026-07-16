@@ -2,12 +2,12 @@ import customtkinter as ctk
 import tkinter as tk
 from tkinter import messagebox
 
-from src.components import (
+from src.views.components import (
     COLORS, FONTS,
     CardFrame, PrimaryButton, SecondaryButton, SuccessButton,
     CustomEntry, CustomLabel, HeaderLabel, MutedLabel, StatusLabel
 )
-import src.auth as auth
+from src.controllers.auth_controller import AuthController as auth
 
 class LoginRegisterFrame(ctk.CTkFrame):
     """Handles Login and Register forms in a clean, centered card design."""

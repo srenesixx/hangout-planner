@@ -3,13 +3,13 @@ import customtkinter as ctk
 import tkinter as tk
 from tkinter import messagebox
 
-from src.components import (
+from src.views.components import (
     COLORS, FONTS, format_rupiah,
     CardFrame, PrimaryButton, SecondaryButton, DangerButton, SuccessButton,
     CustomEntry, CustomLabel, HeaderLabel, MutedLabel, StatusLabel, SubtitleLabel
 )
-import src.planner as planner
-import src.auth as auth
+from src.controllers.planner_controller import PlannerController as planner
+from src.controllers.auth_controller import AuthController as auth
 
 class EstimateItemsView(ctk.CTkFrame):
     """Sub-view: item price estimator per location (F4)."""

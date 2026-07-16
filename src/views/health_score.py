@@ -1,11 +1,11 @@
 from datetime import datetime
 import customtkinter as ctk
 
-from src.components import (
+from src.views.components import (
     COLORS, FONTS,
     CardFrame, CustomLabel, HeaderLabel, SubtitleLabel, MutedLabel
 )
-import src.planner as planner
+from src.controllers.planner_controller import PlannerController as planner
 
 class BudgetHealthScoreView(ctk.CTkFrame):
     """View to display health score detailed analysis (F9)."""
@@ -69,11 +69,7 @@ class BudgetHealthScoreView(ctk.CTkFrame):
         self.components_frm.pack(fill="both", expand=True, padx=20)
 
     def load_score_details(self):
-        # Retrieve all user's historical periods for dropdown
-        conn = planner.get_connection()
-        cursor = conn.cursor()
-        cursor.execute("SELECT DISTINCT strftime('%Y-%m', tanggal) as mon FROM plans WHERE user_id = ? ORDER BY mon DESC", (self.user['id'],))
-        periods = [r['mon'] for r in cursor.fetchall()]
+        periods = planner.get_user_plan_periods(self.user['id'])
         
         current_m = datetime.now().strftime("%Y-%m")
         if current_m not in periods:
